@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: npm ci && npm run build
+      - run: npm ci --force && npm run build
         env:
           GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Setup Pages
