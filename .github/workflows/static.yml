@@ -36,14 +36,14 @@ jobs:
           node-version: 14
       - run: npm ci && npm run build
         env:
-          GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_PERSONAL_TOKEN}}
+          GITHUB_PERSONAL_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload dist directory
-          path: 'dist'
+          path: 'dist/*'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
