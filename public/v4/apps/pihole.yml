@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     volumes:
       - $$cap_appname-pihole-data:/etc/pihole
-      - $$cap_appname-pihole-etc-dnsmasq.d:/etc/dnsmasq.d
+      - $$cap_appname-pihole-etc-dnsmasq:/etc/dnsmasq.d
   environment:
     TZ: $$TIME_ZONE
     WEBPASSWORD: $$WEBPASSWORD
