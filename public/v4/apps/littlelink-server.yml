@@ -1,4 +1,122 @@
 captainVersion: 4
+services:
+    $$cap_appname:
+        image: ghcr.io/techno-tim/littlelink-server:$$cap_littlelink_version
+        restart: unless-stopped
+        caproverExtra:
+          containerHttpPort: '3000'
+        environment:
+          META_DESCRIPTION: $$META_DESCRIPTION
+          META_AUTHOR: $$META_AUTHOR
+          META_KEYWORDS: $$META_KEYWORDS
+          LANG: $$LANG
+          META_INDEX_STATUS: $$META_INDEX_STATUS
+          THEME: $$THEME
+          FAVICON_URL: $$FAVICON_URL
+          AVATAR_URL: $$AVATAR_URL
+          AVATAR_2X_URL: $$AVATAR_2X_URL
+          AVATAR_ALT: $$AVATAR_ALT
+          NAME: $$NAME
+          BIO: $$BIO
+          FOOTER: $$FOOTER
+          GITHUB: $$GITHUB
+          TWITTER: $$TWITTER
+          INSTAGRAM: $$INSTAGRAM
+          YOUTUBE: $$YOUTUBE
+          TWITCH: $$TWITCH
+          DISCORD: $$DISCORD
+          TIKTOK: $$TIKTOK
+          KIT: $$KIT
+          FACEBOOK: $$FACEBOOK
+          FACEBOOK_MESSENGER: $$FACEBOOK_MESSENGER
+          LINKED_IN: $$LINKED_IN
+          PRODUCT_HUNT: $$PRODUCT_HUNT
+          SNAPCHAT: $$SNAPCHAT
+          SPOTIFY: $$SPOTIFY
+          REDDIT: $$REDDIT
+          MEDIUM: $$MEDIUM
+          PINTEREST: $$PINTEREST
+          EMAIL: $$EMAIL
+          EMAIL_TEXT: $$EMAIL_TEXT
+          EMAIL_ALT: $$EMAIL_ALT
+          EMAIL_ALT_TEXT: $$EMAIL_ALT_TEXT
+          SOUND_CLOUD: $$SOUND_CLOUD
+          FIGMA: $$FIGMA
+          TELEGRAM: $$TELEGRAM
+          TUMBLR: $$TUMBLR
+          STEAM: $$STEAM
+          VIMEO: $$VIMEO
+          WORDPRESS: $$WORDPRESS
+          GOODREADS: $$GOODREADS
+          SKOOB: $$SKOOB
+          LETTERBOXD: $$LETTERBOXD
+          MASTODON: $$MASTODON
+          MICRO_BLOG: $$MICRO_BLOG
+          WHATSAPP: $$WHATSAPP
+          STRAVA: $$STRAVA
+          BUYMEACOFFEE: $$BUYMEACOFFEE
+          GITLAB: $$GITLAB
+          PATREON: $$PATREON
+          DEVTO: $$DEVTO
+          UMAMI_WEBSITE_ID: $$UMAMI_WEBSITE_ID
+          UMAMI_APP_URL: $$UMAMI_APP_URL
+          UMAMI_SCRIPT_NAME: $$UMAMI_SCRIPT_NAME
+          BUTTON_ORDER: $$BUTTON_ORDER
+          PAYPAL: $$PAYPAL
+          SLACK: $$SLACK
+          STACKOVERFLOW: $$STACKOVERFLOW
+          LASTFM: $$LASTFM
+          GITEA: $$GITEA
+          POLYWORK: $$POLYWORK
+          SIGNAL: $$SIGNAL
+          UNTAPPD: $$UNTAPPD
+          BUTTON_TARGET: $$BUTTON_TARGET
+          INSTANTGAMING: $$INSTANTGAMING
+          GHOST: $$GHOST
+          TRAKT: $$TRAKT
+          CASHAPP: $$CASHAPP
+          TEESPRING: $$TEESPRING
+          XING: $$XING
+          KEYBASE: $$KEYBASE
+          ONLYFANS: $$ONLYFANS
+          SESSION: $$SESSION
+          THREEMA: $$THREEMA
+          STREAMLABS: $$STREAMLABS
+          PRIVATEBIN: $$PRIVATEBIN
+          AMAZON_AFFILIATE: $$AMAZON_AFFILIATE
+          AMAZON_WISHLIST: $$AMAZON_WISHLIST
+          APPLE_MUSIC: $$APPLE_MUSIC
+          YOUTUBE_MUSIC: $$YOUTUBE_MUSIC
+          VENMO: $$VENMO
+          STATUS: $$STATUS
+          MATRIX: $$MATRIX
+          ANILIST: $$ANILIST
+          GITBUCKET: $$GITBUCKET
+          SHAZAM: $$SHAZAM
+          TPDB: $$TPDB
+          FLICKR: $$FLICKR
+          OSU: $$OSU
+          LINE: $$LINE
+          KAKAOTALK: $$KAKAOTALK
+          DESIGNBYHUMANS: $$DESIGNBYHUMANS
+          DOCKERHUB: $$DOCKERHUB
+          VERO: $$VERO
+          MYANIMELIST: $$MYANIMELIST
+          OG_SITE_NAME: $$OG_SITE_NAME
+          OG_TITLE: $$OG_TITLE
+          OG_DESCRIPTION: $$OG_DESCRIPTION
+          OG_URL: $$OG_URL
+          OG_IMAGE: $$OG_IMAGE
+          OG_IMAGE_WIDTH: $$OG_IMAGE_WIDTH
+          OG_IMAGE_HEIGHT: $$OG_IMAGE_HEIGHT
+          TWITTER_CARD: $$TWITTER_CARD
+          TWITTER_IMAGE: $$TWITTER_IMAGE
+          TWITTER_SITE: $$TWITTER_SITE
+          TWITTER_CREATOR: $$TWITTER_CREATOR
+          SHARE: $$SHARE
+          FIVEHUNDREDPX: $$FIVEHUNDREDPX
+          PRINTABLES: $$PRINTABLES
+          SERIALIZD: $$SERIALIZD
 caproverOneClickApp:
     variables:
         - id: $$cap_littlelink_version
@@ -340,20 +458,14 @@ caproverOneClickApp:
         - id: $$SERIALIZD
           label: Serializd URL
           defaultValue: https://www.serializd.com/
-
     instructions:
         start: |-
             starting installation
-        end: >
+            hopefully
+        end: |-
             Installed!
-
+            hopefully
     displayName: littlelink-server
     isOfficial: false
     description: A linktree alternative
     documentation: https://littlelink.io/
-services:
-    $$cap_appname:
-        image: ghcr.io/techno-tim/littlelink-server:$$cap_littlelink_version
-        restart: unless-stopped
-        caproverExtra:
-            containerHttpPort: '3000'
