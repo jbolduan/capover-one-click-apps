@@ -1,0 +1,37 @@
+captainVersion: 4
+services:
+  $$cap_appname:
+    image: pihole/pihole:$$cap_pihole_version
+    restart: unless-stopped
+    volumes:
+      - $$cap_appname-pihole-data:/etc/pihole
+      - $$cap_appname-pihole-etc-dnsmasq.d:/etc/dnsmasq.d
+  environment:
+    TZ: $$TIME_ZONE
+    WEBPASSWORD: $$WEBPASSWORD
+  ports:
+    - '53:53/tcp'
+    - '53:53/udp'
+    - '67:67/udp'
+    - '80:80/tcp'
+  cap_add:
+    - NET_ADMIN
+caproverOneClickApp:
+  variables:
+    - id: $$TIME_ZONE
+      label: Time Zone
+      defaultValue: 'America/Chicago'
+    - id: $$WEBPASSWORD
+      label: Web Password
+      defaultValue: $$cap_gen_random_hex(16)
+  instructions:
+    start: |-
+      Starting installation of pi hole
+
+      This could take some time, please be patient.
+    end: |-
+      Installation complete.
+  displayName: piHole
+  isOfficial: true
+  description: A tool for network wide ad blocking.
+  documentation: https://github.com/pi-hole/docker-pi-hole
