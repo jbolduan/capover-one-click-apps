@@ -18,6 +18,11 @@ services:
     - NET_ADMIN
 caproverOneClickApp:
   variables:
+    - id: $$cap_pihole_version
+      label: PiHole Version
+      defaultValue: '2023.05.2'
+      description: Check out their Docker page for valid tags https://hub.docker.com/r/pihole/pihole/tags
+      validRegex: /^([^\s^\/])+$/
     - id: $$TIME_ZONE
       label: Time Zone
       defaultValue: 'America/Chicago'
