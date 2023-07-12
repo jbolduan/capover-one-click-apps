@@ -6,6 +6,7 @@ services:
         caproverExtra:
           containerHttpPort: '3000'
         environment:
+          META_TITLE: $$META_TITLE
           META_DESCRIPTION: $$META_DESCRIPTION
           META_AUTHOR: $$META_AUTHOR
           META_KEYWORDS: $$META_KEYWORDS
@@ -124,7 +125,9 @@ caproverOneClickApp:
           defaultValue: latest
           description: Check out their Docker page for the valid tags https://github.com/techno-tim/littlelink-server/pkgs/container/littlelink-server
           validRegex: /^([^\s^\/])+$/
-              - META_TITLE=Techno Tim
+        - id: $$META_TITLE
+          label: Meta Title
+          defaultValue: Techno Tim
         - id: $$META_DESCRIPTION
           label: Meta Description
           defaultValue: Techno Tim Link page
